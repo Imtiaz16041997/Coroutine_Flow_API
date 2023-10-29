@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.asFlow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOf
@@ -18,9 +19,33 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
+
     }
 
 }
+
+/*
+*
+* class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        /*asFlow - listOf data converted in flow*/
+        val data = listOf(1,2,3,4,5,6,7,8).asFlow().flowOn(Dispatchers.IO)
+
+        runBlocking {
+            data.collect{
+                Log.d("main", "onCreate: $it")
+            }
+        }
+
+    }
+
+}
+*
+*
+* */
 
 
 
