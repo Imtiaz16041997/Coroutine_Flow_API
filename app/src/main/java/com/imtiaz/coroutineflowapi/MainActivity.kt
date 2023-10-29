@@ -17,6 +17,22 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
+    }
+
+}
+
+
+
+/*     Flow - flowOf {} method
+*
+*
+*  class MainActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
         /*if i need to store list of data then i can store it flow of*/
 
         val data = flowOf(1,2,3,4,5,6,9,7).flowOn(Dispatchers.IO)
@@ -30,7 +46,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-}
+}*/
 
 
 /*
