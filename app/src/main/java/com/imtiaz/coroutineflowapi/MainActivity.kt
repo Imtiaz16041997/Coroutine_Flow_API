@@ -16,6 +16,22 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
+
+    }
+
+}
+
+
+/*
+************  Flow - flow {} builder block  ***********
+*
+*
+* class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
         /*Data Collect inside the Main Thread, collect is a suspend func*/
         /*for the demo purpose i am using runBlocking, but in Production runBlocking might not need*/
         runBlocking {
@@ -42,3 +58,5 @@ class MainActivity : AppCompatActivity() {
 
 
 }
+*
+* */
