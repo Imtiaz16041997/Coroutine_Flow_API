@@ -7,6 +7,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.runBlocking
 
@@ -16,6 +17,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        /*if i need to store list of data then i can store it flow of*/
+
+        val data = flowOf(1,2,3,4,5,6,9,7).flowOn(Dispatchers.IO)
+
+        runBlocking {
+            data.collect{
+                Log.d("main", "onCreate: $it")
+            }
+        }
 
 
     }
