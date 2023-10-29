@@ -7,9 +7,11 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.asFlow
 import kotlinx.coroutines.flow.catch
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.flow.flowOn
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.runBlocking
 
 
@@ -23,6 +25,31 @@ class MainActivity : AppCompatActivity() {
     }
 
 }
+
+
+/*     Kotlin Flow - map { } Operator
+*
+*
+* class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        val data = flowOf(1,2,3,4,5).flowOn(Dispatchers.IO)
+
+        runBlocking {
+            data.map {data->
+                data*data
+            }.collect{
+                Log.d("main", "onCreate: $it")
+            }
+        }
+
+    }
+
+}
+*
+* */
 
 /*
 *
